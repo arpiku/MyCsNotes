@@ -1,0 +1,2 @@
+- It is built with electron JS, i.e all the theming is just css.
+- 

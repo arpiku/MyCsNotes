@@ -1,0 +1,112 @@
+{
+  "main": {
+    "id": "7718c21d19ddc95a",
+    "type": "split",
+    "children": [
+      {
+        "id": "a5b5af8db5951572",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "DataBases/Database.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "35077c41c7597656",
+    "type": "split",
+    "children": [
+      {
+        "id": "b737c8195d180eb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8990d7b3c3e9ee81",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e1c8b342f3ce3630",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "data",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f38777626a3c3820",
+    "type": "split",
+    "children": [
+      {
+        "id": "c41ef9c7b9703ea5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "84a247506c67e2f8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DataBases/Database.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "025736c507aa4bad",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "a5b5af8db5951572",
+  "lastOpenFiles": [
+    "DataBases/BigQuery.md",
+    "DataBases/Database.md",
+    "DataBases/SQL/SQL Basics.md",
+    "Kubernetes/Kubernetes Basic.md",
+    "Distributed_Systems/Ray.md",
+    "Untitled 1.md",
+    "DataBases/Data Pipes.md",
+    "DataBases/DataBase_Design.md",
+    "Apache/Apache Kafka.md",
+    "Apache/Apache spark.md"
+  ]
+}

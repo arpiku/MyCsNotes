@@ -1,0 +1,1 @@
+1. x[y] is turned into *(x+y) before compiling. the bracket syntax is just a useful shortcut for the pointer arithmetic.
