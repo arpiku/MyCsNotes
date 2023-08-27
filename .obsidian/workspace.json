@@ -11,34 +11,13 @@
             "id": "9b4d8089b18019d7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "49aca3620c5b8ede",
-            "type": "leaf",
-            "state": {
               "type": "image",
               "state": {
-                "file": "Pasted image 20230306133209.png"
-              }
-            }
-          },
-          {
-            "id": "f062ead6d492116a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CompetitveProgramming/Dynamic Programming.md",
-                "mode": "source",
-                "source": false
+                "file": "CompetitveProgramming/img/snapshot_6.jpg"
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -67,7 +46,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "key",
+                "query": "competi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -84,8 +63,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -105,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CompetitveProgramming/Dynamic Programming.md",
+                "file": "CompetitveProgramming/img/snapshot_6.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,53 +119,53 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f062ead6d492116a",
+  "active": "9b4d8089b18019d7",
   "lastOpenFiles": [
-    "Programming_Paradigms/Functional_Programming.md",
-    "Git_Misc.md",
-    "Links.md",
-    "Python/Python_Basics_01.md",
-    "Python/Python_Misc.md",
-    "Scrapy.md",
-    "YAML files.md",
-    "SSH.md",
-    "Pasted image 20230306133209.png",
-    "Security",
-    "Pasted image 20230306133053.png",
-    "Pasted image 20230306132930.png",
-    "Machine_Learning/Basic_Concepts_Summary.md",
-    "MISC_INFO.md",
-    "DevOps.md",
-    "MinHash clustering.md",
-    "DataBases/MongoDB/MongoDB.md",
-    "DataBases/Database.md",
-    "design_patterns",
-    "DataBases/DataBase_Design.md",
-    "C/C_getenv.md",
-    "Untitled",
-    "C/C_Basics.md",
-    "Untitled 1.md",
-    "Untitled.md",
-    "Untitled 2.md",
-    "VS_Code/VS Notes.md",
-    "Linux_GNU/CLI.md",
-    "Basic C.md",
-    "LLM_Basics.md",
-    "Basic_shit",
-    "Linux_GNU/Commands.md",
-    "linux",
-    "Python/Python_Libraries.md",
-    "Daily_Notes/img/DocAsTree.jpg",
     "CompetitveProgramming/img/snapshot_5.jpg",
-    "CompetitveProgramming/img/snapshot.jpg",
-    "Apache/img/snapshot.jpg",
-    "Apache/img/snapshot_2.jpg",
-    "VS_Code",
     "CompetitveProgramming/img/snapshot_4.jpg",
     "CompetitveProgramming/img/snapshot_2.jpg",
+    "CompetitveProgramming/img/snapshot.jpg",
+    "C/C_getenv.md",
+    "C/C_Basics.md",
+    "AWS/img/snapshot_8_Imp.jpg",
+    "AWS/img/snapshot_7_Imp.jpg",
+    "AWS/img/snapshot_6.jpg",
+    "AWS/img/snapshot_5.jpg",
+    "AWS/img/snapshot_4.jpg",
+    "AWS/img/snapshot_3.jpg",
+    "AWS/img/snapshot_2.jpg",
+    "Apache/Apache spark.md",
+    "Apache/Apache Kafka.md",
+    "AI_dev_notes/Initial POC.md",
+    "Cpp/Cpp_Weekly_Cpp23.md",
+    "Cpp/Misc.md",
+    "Daily_Notes/22ndJuly2022.md",
+    "Daily_Notes/21stJuly2022.md",
+    "Daily_Notes/18August2022.md",
+    "Kubernetes/Kubernetes Basic.md",
+    "Machine_Learning/ALS Implicit Collaborative Filtering.md",
+    "VS_Code/VS Notes.md",
+    "WebDev/API.md",
+    "Basic C.md",
+    "Churn.md",
+    "ClickHouse.md",
+    "Collaborative filtering.md",
+    "Convisitation counts.md",
+    "Cross_Validation.md",
+    "decision trees.md",
+    "DevOps.md",
+    "Git.md",
+    "Errors.md",
+    "Git_Misc.md",
+    "CompetitveProgramming/Problems_leetcode",
+    "Security",
+    "design_patterns",
+    "Untitled",
+    "Basic_shit",
+    "linux",
+    "VS_Code",
     "Data_Science/img/How to Create Xarray Datasets. Defining a dataset from scratch | by Luke Gloege, Ph.D. | Towards Data Science.pdf",
     "AI_dev_notes/Untitled",
-    "AI_dev_notes",
-    "Apache/Apache Druid"
+    "AI_dev_notes"
   ]
 }
