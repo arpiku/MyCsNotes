@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+                "file": "Algorithms/bfs.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+                "file": "Algorithms/bfs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,8 +135,10 @@
   },
   "active": "9b4d8089b18019d7",
   "lastOpenFiles": [
-    "String.md",
     "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+    "Algorithms/bfs.md",
+    "Algorithms/Greedy-Algorithm.md",
+    "String.md",
     "Data_Structures/hashMap.md",
     "Data_Structures/linkedList.md",
     "Data_Structures/tree.md",
@@ -171,8 +173,6 @@
     "Cpp/Misc.md",
     "Daily_Notes/22ndJuly2022.md",
     "Daily_Notes/21stJuly2022.md",
-    "Daily_Notes/18August2022.md",
-    "Kubernetes/Kubernetes Basic.md",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",
