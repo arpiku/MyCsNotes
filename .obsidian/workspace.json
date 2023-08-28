@@ -11,9 +11,23 @@
             "id": "9b4d8089b18019d7",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "CompetitveProgramming/img/snapshot_6.jpg"
+                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "877ffc7b03ba22b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "String.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -46,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "competi",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -83,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CompetitveProgramming/img/snapshot_6.jpg",
+                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,6 +135,25 @@
   },
   "active": "9b4d8089b18019d7",
   "lastOpenFiles": [
+    "String.md",
+    "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+    "Data_Structures/hashMap.md",
+    "Data_Structures/linkedList.md",
+    "Data_Structures/tree.md",
+    "Data_Structures/binarySearchTree.md",
+    "Data_Structures/binaryTree.md",
+    "Data_Structures/array.md",
+    "Data_Structures/graphs.md",
+    "().md",
+    "array.md",
+    "Untitled 1.md",
+    "VS_Code/VS Notes.md",
+    "Data_Structures.md",
+    "Pdfs/AAAMLP.pdf",
+    "Microservices/img/snapshot_2.jpg",
+    "Data_Structures",
+    "DataBases/Database.md",
+    "CompetitveProgramming/img/snapshot_6.jpg",
     "CompetitveProgramming/img/snapshot_5.jpg",
     "CompetitveProgramming/img/snapshot_4.jpg",
     "CompetitveProgramming/img/snapshot_2.jpg",
@@ -131,9 +164,6 @@
     "AWS/img/snapshot_7_Imp.jpg",
     "AWS/img/snapshot_6.jpg",
     "AWS/img/snapshot_5.jpg",
-    "AWS/img/snapshot_4.jpg",
-    "AWS/img/snapshot_3.jpg",
-    "AWS/img/snapshot_2.jpg",
     "Apache/Apache spark.md",
     "Apache/Apache Kafka.md",
     "AI_dev_notes/Initial POC.md",
@@ -143,29 +173,13 @@
     "Daily_Notes/21stJuly2022.md",
     "Daily_Notes/18August2022.md",
     "Kubernetes/Kubernetes Basic.md",
-    "Machine_Learning/ALS Implicit Collaborative Filtering.md",
-    "VS_Code/VS Notes.md",
-    "WebDev/API.md",
-    "Basic C.md",
-    "Churn.md",
-    "ClickHouse.md",
-    "Collaborative filtering.md",
-    "Convisitation counts.md",
-    "Cross_Validation.md",
-    "decision trees.md",
-    "DevOps.md",
-    "Git.md",
-    "Errors.md",
-    "Git_Misc.md",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",
-    "Untitled",
     "Basic_shit",
     "linux",
     "VS_Code",
     "Data_Science/img/How to Create Xarray Datasets. Defining a dataset from scratch | by Luke Gloege, Ph.D. | Towards Data Science.pdf",
-    "AI_dev_notes/Untitled",
-    "AI_dev_notes"
+    "AI_dev_notes/Untitled"
   ]
 }
