@@ -81,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.5
+    "width": 216.5
   },
   "right": {
     "id": "f38777626a3c3820",
@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -133,15 +134,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9b4d8089b18019d7",
+  "active": "025736c507aa4bad",
   "lastOpenFiles": [
-    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
+    "Data_Structures/trie.md",
     "String.md",
     "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
     "Basic_shit/Basic Coding.md",
     "Basic_shit/Bit-Manipulation.md",
-    "Basic C.md",
+    "CompetitveProgramming/Dynamic Programming.md",
     "Algorithms/Greedy-Algorithm.md",
+    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
+    "Basic C.md",
     "Algorithms/bfs.md",
     "Data_Structures/hashMap.md",
     "Data_Structures/linkedList.md",
@@ -171,8 +174,6 @@
     "AWS/img/snapshot_6.jpg",
     "AWS/img/snapshot_5.jpg",
     "Apache/Apache spark.md",
-    "Apache/Apache Kafka.md",
-    "AI_dev_notes/Initial POC.md",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",

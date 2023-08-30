@@ -1198,3 +1198,589 @@ public:
 ```
 - The above is a dfs approach.
 - And the following is a bfs approach.
+
+## Number of 1 bits
+- [[Bit-Manipulation]] 
+```cpp
+class Solution {
+public:
+    uint8_t hammingWeight(uint32_t n) {
+        if(!n)
+            return 0;
+        uint8_t count = 0;
+        while(n) {
+            count += n & 1;
+            n >>= 1;
+        }
+        return count;
+    }
+};
+```
+
+## Longest Common Prefix
+- [[string]] [[trie]]
+- One can solve this problem rather easily using the following solution.
+```cpp
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        if(strs.empty())
+            return "";
+        if(strs.size() <= 1)
+            return strs[0];
+        int i = 0;
+        bool flag = true;
+        while(flag) {
+            char cmp = strs[0][i];
+            for(auto& str:strs) {
+                if(str[i] == cmp)
+                    continue;
+                else {
+                    flag = false;
+                    break;
+                }
+            }
+            i++;
+        }
+        if(!i)
+            return "";
+        return strs[0].substr(0,i-1);
+    }
+};
+```
+- But we have a special data structure when it comes to dealing with strings. The solution to that can be found in [[trie]].
+
+
+## Single Number 
+- [[Bit-Manipulation]] [[array]]
+```cpp
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        if(nums.empty()) 
+            return -1;
+        int ans = 0;
+        for(auto& i:nums)
+            ans ^= i;
+        return ans;
+
+    }
+};
+```
+
+
+## Palindrome Linked List
+- [[stack]] [[recursion]] [[twoPointers]] [[linkedList]] 
+```cpp
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        std::stack<int> intstack;
+        ListNode* temp = head;
+        while(temp!=NULL) {
+            intstack.push(temp->val);
+                temp = temp->next;
+        }
+        
+        while(head != NULL) {
+            if(head->val != intstack.top())
+                return false;
+            head = head->next;
+            intstack.pop();
+        }
+
+        return true;
+            
+    }
+};
+```
+- We can also use a recursive approach as follows
+```cpp
+class Solution {
+public:
+    bool isPalindrome(ListNode*& left, ListNode* right) {
+    if (!right) {
+        return true;
+    }
+    bool isPal = isPalindrome(left, right->next);
+    isPal = isPal && (left->val == right->val);
+    left = left->next;
+    return isPal;
+}
+
+    bool isPalindrome(ListNode* head) {
+        return isPalindrome(head,head);
+        
+    }
+};
+```
+
+## Convert Sorted Array to Binary Search Tree
+- [[binaryTree]] [[binarySearchTree]] [[tree]] [[recursion]] [[divideAndConquer]]
+```cpp
+class Solution {
+public:
+    TreeNode* makeTree(std::vector<int>& nums,int l,int r) {
+        if(l>r) 
+            return NULL;
+        int mid = l + (r-l)/2;
+        TreeNode* root = new TreeNode(nums[mid]);
+        root->left = makeTree(nums,l,mid-1);
+        root->right = makeTree(nums,mid+1,r);
+        return root;
+    }
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        if(nums.empty())
+            return NULL;
+        return makeTree(nums,0,nums.size()-1);
+    }
+};
+``` 
+
+## Reverse Bits
+- [[Bit-Manipulation]] [[divideAndConquer]]
+```cpp
+class Solution {
+public:
+    uint32_t reverseBits(uint32_t n) {
+        int res = 0;
+        int bits = 31;
+        while(bits >= 0) {
+            int currBit = n & 1;
+            res = res | (currBit << bits);
+            n >>= 1;
+            bits--;
+        }
+        return res;
+    }
+};
+```
+
+## SubTree of another Tree
+- [[binaryTree]] [[recursion]]
+```cpp
+bool isIdentical(TreeNode* s, TreeNode* t) {
+    if (!s && !t) {
+        return true; 
+    }
+    if (!s || !t) {
+        return false; 
+    }
+
+    return (s->val == t->val) && isIdentical(s->left, t->left) && isIdentical(s->right, t->right);
+}
+
+bool isSubtree(TreeNode* s, TreeNode* t) {
+    if (!s) {
+        return false; 
+    }
+    if (isIdentical(s, t)) {
+        return true;
+    }
+    return isSubtree(s->left, t) || isSubtree(s->right, t);
+}
+```
+- The bfs approach would be like this
+```cpp
+bool isIdentical(TreeNode* s, TreeNode* t) {
+    if (!s && !t) {
+        return true; 
+    }
+    if (!s || !t) {
+        return false;
+    }
+
+    return (s->val == t->val) && isIdentical(s->left, t->left) && isIdentical(s->right, t->right);
+}
+
+bool isSubtree(TreeNode* s, TreeNode* t) {
+    if (!s) {
+        return false; 
+    }
+
+    std::queue<TreeNode*> bfsQueue;
+    bfsQueue.push(s);
+
+    while (!bfsQueue.empty()) {
+        TreeNode* currentNode = bfsQueue.front();
+        bfsQueue.pop();
+        if (isIdentical(currentNode, t)) {
+            return true;
+        }
+        if (currentNode->left) {
+            bfsQueue.push(currentNode->left);
+        }
+        if (currentNode->right) {
+            bfsQueue.push(currentNode->right);
+        }
+    }
+
+    return false; 
+}
+```
+
+
+## Squares of a Sorted Array
+```cpp
+bool isIdentical(TreeNode* s, TreeNode* t) {
+    if (!s && !t) {
+        return true; 
+    }
+    if (!s || !t) {
+        return false;
+    }
+
+    return (s->val == t->val) && isIdentical(s->left, t->left) && isIdentical(s->right, t->right);
+}
+
+bool isSubtree(TreeNode* s, TreeNode* t) {
+    if (!s) {
+        return false; 
+    }
+
+    std::queue<TreeNode*> bfsQueue;
+    bfsQueue.push(s);
+
+    while (!bfsQueue.empty()) {
+        TreeNode* currentNode = bfsQueue.front();
+        bfsQueue.pop();
+        if (isIdentical(currentNode, t)) {
+            return true;
+        }
+        if (currentNode->left) {
+            bfsQueue.push(currentNode->left);
+        }
+        if (currentNode->right) {
+            bfsQueue.push(currentNode->right);
+        }
+    }
+
+    return false; 
+}
+```
+
+## Maximum SubArray
+- [[array]] [[dynamicProgramming]] [[divideAndConquer]]
+```cpp
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        if(nums.empty())
+            return 0;
+        int max = INT_MIN;
+        int currSum = 0;
+        for(int i = 0; i<nums.size(); i++) {
+            currSum += nums[i];
+            if(currSum > max) 
+                max = currSum;
+            if(currSum < 0)
+                currSum = 0;
+        }    
+        return max;    
+    }
+};
+```
+
+## Insert Interval
+
+## 01 Matrix
+- [[array]] [[dynamicProgramming]] [[bfs]] [[matrix]]
+```cpp
+class Solution {
+public:
+std::vector<std::vector<int>> updateMatrix(std::vector<std::vector<int>>& matrix) {
+        if (matrix.empty()) {
+            return matrix; 
+        }
+
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+
+        std::vector<std::vector<int>> result(rows, std::vector<int>(cols, INT_MAX));
+
+        std::queue<std::pair<int, int>> bfsQueue;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    result[i][j] = 0;
+                    bfsQueue.push(std::make_pair(i, j));
+                }
+            }
+        }
+        std::vector<int> dr = {-1, 1, 0, 0};
+        std::vector<int> dc = {0, 0, -1, 1};
+        while (!bfsQueue.empty()) {
+            int r = bfsQueue.front().first;
+            int c = bfsQueue.front().second;
+            bfsQueue.pop();
+            for (int dir = 0; dir < 4; dir++) {
+                int newR = r + dr[dir];
+                int newC = c + dc[dir];
+                if (newR >= 0 && newR < rows && newC >= 0 && newC < cols &&
+                    result[newR][newC] > result[r][c] + 1) {
+                    result[newR][newC] = result[r][c] + 1;
+                    bfsQueue.push(std::make_pair(newR, newC));
+                }
+            }
+        }
+
+        return result;
+    }
+};
+```
+- The **dfs** approach will be this 
+```cpp
+class Solution {
+public:
+std::vector<std::vector<int>> updateMatrix(std::vector<std::vector<int>>& matrix) {
+        if (matrix.empty()) {
+            return matrix;
+        }
+
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        std::vector<std::vector<int>> result(rows, std::vector<int>(cols, INT_MAX));
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    dfs(matrix, result, i, j, 0);
+                }
+            }
+        }
+
+        return result;
+    }
+
+private:
+    void dfs(std::vector<std::vector<int>>& matrix, std::vector<std::vector<int>>& result, int r, int c, int distance) {
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+
+        if (r < 0 || r >= rows || c < 0 || c >= cols || distance >= result[r][c]) {
+            return;
+        }
+        result[r][c] = distance;
+
+        int dr[] = {-1, 1, 0, 0};
+        int dc[] = {0, 0, -1, 1};
+
+        for (int dir = 0; dir < 4; dir++) {
+            int newR = r + dr[dir];
+            int newC = c + dc[dir];
+
+            dfs(matrix, result, newR, newC, distance + 1);
+        }
+    }
+};
+```
+- But the above approach will fail due high time complexity
+- Interestingly both algorithms have same time complexities theoretically but **bfs** will actually be faster.
+
+## K Closest Points to origin
+- [[quickSelect]] [[prioirtyQueue]] [[divideAndConquer]] [[Geometry]] [[math]] [[sorting]] 
+- A straight forward approach would be 
+```cpp
+class Solution {
+public:
+    float _getdist(float x,float y) {
+        return std::sqrt(pow(x,2)+pow(y,2));
+    }
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        std::map<float,std::vector<vector<int>>> pointMap;
+        vector<vector<int>> res;
+        for(auto& point:points) {
+            float dist = _getdist(point[0],point[1]);
+            if(pointMap.find(dist) != pointMap.end()) {
+                pointMap[dist].push_back(point);
+                continue;
+            }
+            pointMap[dist].push_back(point);
+        }
+        auto it = pointMap.begin();
+        int i = 0;
+        while(i<k) {
+            auto vec = it->second;
+            for(auto v:vec) {
+                res.push_back(v); i++; 
+                if(!(i<k))
+                    break;
+            }
+            it++;
+        }
+        return res;
+    }
+};
+```
+- A cooler solution would be
+```cpp
+struct CompareDistance {
+    bool operator()(const std::pair<int, int>& p1, const std::pair<int, int>& p2) {
+        return (p1.first * p1.first + p1.second * p1.second) >
+               (p2.first * p2.first + p2.second * p2.second);
+    }
+};
+
+class Solution {
+public:
+    std::vector<std::vector<int>> kClosest(std::vector<std::vector<int>>& points, int k) {
+        // Create a priority queue to store points sorted by distance from origin
+        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, CompareDistance> pq;
+
+        // Push the first K points into the priority queue
+        for (int i = 0; i < k; i++) {
+            pq.push({points[i][0], points[i][1]});
+        }
+
+        // Continue iterating through the remaining points and update the queue if closer points are found
+        for (int i = k; i < points.size(); i++) {
+            int dist = points[i][0] * points[i][0] + points[i][1] * points[i][1];
+            int maxDist = pq.top().first * pq.top().first + pq.top().second * pq.top().second;
+            
+            if (dist < maxDist) {
+                pq.pop();
+                pq.push({points[i][0], points[i][1]});
+            }
+        }
+
+        // Extract the K closest points from the priority queue
+        std::vector<std::vector<int>> result;
+        while (!pq.empty()) {
+            result.push_back({pq.top().first, pq.top().second});
+            pq.pop();
+        }
+
+        return result;
+    }
+};
+```
+
+## Longest Substring Without Repeating Characters
+- [[slidingWindow]] [[string]] [[hashMap]]
+```cpp
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        std::queue<char> charQ;
+        uint l = 0;
+        uint r = 0;
+        uint maxL = 0;
+        for(;r<0;) {
+            if(charQ.front() != s[r]) {
+                charQ.push(s[r++]);
+            else 
+                {charQ.pop();l++;};
+            }
+        }
+        return charQ.size()-1;
+        
+    }
+};
+```
+
+## 3Sum
+
+## Binary Tree Level Order Traversal
+- [[binaryTree]] [[bfs]]
+```cpp
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if(!root)
+            return {};
+
+        std::vector<std::vector<int>> res;
+        std::queue<TreeNode*> nq;
+        nq.push(root);
+        while(!nq.empty()) {
+            int N = nq.size();
+            std::vector<int> temp;
+            for(int i = 0; i<N;i++) {
+                TreeNode* curr = nq.front(); nq.pop();
+                temp.push_back(curr->val);
+                if(root->right)
+                    nq.push(root->right);
+                if(root->left)
+                    nq.push(root->left);
+            } res.push_back(temp);
+        }
+        return res;
+    }
+};
+```
+
+## Clone Graph
+
+## Evaluate Reverse Polish Notation
+- [[math]] [[stack]] [[arra]]
+```cpp
+class Solution {
+public:
+    bool isNum(const std::string& s) {
+    std::istringstream ss(s);
+    double num;
+    return (ss >> num) && ss.eof();
+    }
+
+    int calc(std::stack<int>& s, std::string op) {
+        int a = s.top(); s.pop();
+        int b = s.top(); s.pop();
+        if(op == "*")
+            return b*a;
+        if(op == "/")
+            return b/a;
+        if(op == "-")
+            return b-a;
+        if(op == "+")
+            return b+a;
+        return 0;
+    }
+
+
+    int evalRPN(vector<string>& tokens) {
+        std::stack<int> stk;
+
+        for(auto& s:tokens) {
+            if(isNum(s)) {
+                stk.push(atoi(s.c_str()));
+            }
+            else {
+                stk.push(calc(stk, s));
+            }
+
+        }
+        return stk.top();
+        
+    }
+};
+```
+
+## Course Schedule
+## Implement Trie
+## Coin Change
+## Product of Array except Self
+
+## Min Stack
+
+## Validate Binary Search Tree
+- [[binaryTree]] [[recursion]]
+```cpp
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) {
+        if(root && !root->right && !root->left)
+            return true;
+        else if(!root->left && root->right)
+            return isValidBST(root->right);
+        else if(!root->right && root->left)
+            return isValidBST(root->left);
+        else if(root->val >= root->right->val || root->val <= root->left->val)
+            return false;
+        return isValidBST(root->right) && isValidBST(root->left);
+    }
+};
+
+```
+
+## Number Of Islands
+## Rotating Oranges
+
