@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms/bfs.md",
+                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithms/bfs.md",
+                "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,10 +135,14 @@
   },
   "active": "9b4d8089b18019d7",
   "lastOpenFiles": [
-    "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
-    "Algorithms/bfs.md",
-    "Algorithms/Greedy-Algorithm.md",
+    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
     "String.md",
+    "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+    "Basic_shit/Basic Coding.md",
+    "Basic_shit/Bit-Manipulation.md",
+    "Basic C.md",
+    "Algorithms/Greedy-Algorithm.md",
+    "Algorithms/bfs.md",
     "Data_Structures/hashMap.md",
     "Data_Structures/linkedList.md",
     "Data_Structures/tree.md",
@@ -169,10 +173,6 @@
     "Apache/Apache spark.md",
     "Apache/Apache Kafka.md",
     "AI_dev_notes/Initial POC.md",
-    "Cpp/Cpp_Weekly_Cpp23.md",
-    "Cpp/Misc.md",
-    "Daily_Notes/22ndJuly2022.md",
-    "Daily_Notes/21stJuly2022.md",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",

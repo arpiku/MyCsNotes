@@ -559,3 +559,642 @@ public:
 };
 ```
 - The **IMPORTANT** thing is the equality check, see it's not just '<>' but '<>='. 
+
+## Balanced Binary Tree
+- [[tree]] [[dfs]] [[binaryTree]]
+- For this problem the important insight is solving the problem of figuring out the height of the left and right subTrees.
+- We can write another function that specifically gets the height of a subtree
+- We see if the difference of two subtree height is greater than 1, if it is then , we simple return true.
+```cpp
+class Solution {
+public:
+    int getHeight(TreeNode* node) {
+        if(!node)
+            return 0;
+        return std::max(1 + getHeight(node->right), 1 + getHeight(node->left));
+    }
+
+
+    bool isBalanced(TreeNode* root) {
+        if(!root)
+            return true;
+        if(abs(getHeight(root->left) - getHeight(root->right) > 1))
+            return false;
+        return isBalanced(root->right) && isBalanced(root->left);
+        
+    }
+};
+```
+
+-  TO, SO
+- The thing to notice is how we use && operator in our recursive function call.
+
+## Linked List Cycle.
+- [[hashMap]] [[linkedList]] [[twoPointers]]
+- This problem uses property of numbers in order to find the cycle.
+- Think of hands of clocks they move at different speeds but come at the same point through out the day.
+- That point is the LCM of the hands.
+- We can use the same idea to find if there is a cycle, imagine two iterators going through the linked list, with one moving at a higher speed, if there is a cycle then they will eventually reach the same node.
+- If the cycle is not there, well then our loop will simply exit and result in false being returned.
+```cpp
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* s = head;
+        ListNode* f = head;
+        while(f && f->next) {
+            s = s->next;f = f->next->next;
+            if (s == f)
+                return true;
+        } return false;
+        
+    }
+};
+```
+- Something interesting to notice is about C++ code is that following line doesn't work.
+```cpp
+        ListNode* s,f;
+        s = head;
+        f = head;
+```
+- The correct way of doing it is:
+```cpp
+        ListNode *s,*f;
+        s = head;
+        f = head;
+```
+- More you know!
+
+## Implement Queue using stacks.
+- This question is rather trivial and not fun : (.
+- But here is the code
+```cpp
+class MyQueue {
+private:
+    std::stack<int> stack1;
+    std::stack<int> stack2;
+public:
+
+    
+    MyQueue() {
+    }
+    
+    void push(int x) {
+        stack1.push(x);
+    }
+    
+    int pop() {
+        int val = 0;
+        if(stack2.empty())
+            while(!stack1.empty()) {
+                stack2.push(stack1.top());
+                    stack1.pop();
+            }
+        
+        val = stack2.top();
+        stack2.pop();
+        return val;
+        
+    }
+    
+    int peek() {
+                if(stack2.empty())
+            while(!stack1.empty()) {
+                stack2.push(stack1.top());
+                    stack1.pop();
+            }
+        return stack2.top();
+    }
+    
+    bool empty() {
+        return stack1.empty()&&stack2.empty();
+    }
+};
+
+```
+- Imagine a deck of cards as the stack, implementing queue is similar to rotating the stack, i.e getting it upside down.
+- This is done using the second stack, take everything in s1 and put in s2
+	- s1 -> s2
+- Now the top of the s2 will be the bottom piece in s1, hence we successfully implement FIFO, using FILO. Amazing!
+
+
+## First Bad Version
+- The problem here is not that of writing the algorithm simply, because following is valid solution.
+```cpp
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        int i = 1;
+        while(i<=n) 
+            if(isBadVersion(i++))
+                return i-1;
+        return -1;
+    }
+};
+```
+- The solution they want from us is the following, which is another implementation of [[binarySearch]] on the very number rather than an array.
+```cpp
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        int l=1;
+        int h=n;
+        while(l<h){
+            const int mid=l+(h-l)/2;
+            if(isBadVersion(mid)){
+                h=mid;
+            }
+            else{
+                l=mid+1;
+            }
+        }
+        return l;
+    }
+};
+```
+
+
+## Ransom Note
+- [[hashMap]] [[string]] [[counting]]
+- This is an important algorithm for kidnappers, and have been widely used by Big Crime, so prepare it well before interviewing for the Mafia, Cartel etc.
+- The idea is rather simple, count all the characters available in magazine and store the relevant counts against the characters in a hash table.
+- Then iterate through the ransomNote string, if there is a character missing in magazine hash map or that character count has reached zero we return fasle.
+```cpp
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        if(magazine.size() == 0)
+            return false;
+        unordered_map<char,int>  m;
+        for(auto& ch:magazine) {
+            m[ch]++;
+        }
+
+        for(auto& ch:ransomNote) {
+            if(m.find(ch) == m.end() || m[ch] == 0)
+                return false;
+            m[ch]--;
+        }
+        return true;
+    }
+};
+```
+
+
+## Climbing Stairs
+- [[hashMap]] [[dynamicProgramming]] [[recursion]]
+- This problem is just like implementing a recursive memoized function for Fibonacci series.
+```cpp
+class Solution {
+public:
+    int cs(std::unordered_map<int,int>& m, int n ){
+        if(m.find(n) == m.end())   
+            m[n] = cs(m,n-1) + cs(m,n-2);
+        return m[n];
+    }
+    int climbStairs(int n) {
+        if(n <=1)
+            return 1;
+        std::unordered_map<int,int> m = {{1,1},{2,2}};
+        return cs(m,n);
+    }
+};
+```
+- Simple stuff!
+
+## Longest Palindrome
+- [[Greedy-Algorithm]][[counting]][[hashMap]]
+- This problem introduces interesting idea to solve it, imagine you are given a string, consider all the elements with event count and start filling the string at both ends, if their count is even then it means that the final string will infact be a palindrome.
+- The characters that have a odd count say 2n+1 then the 2n times we can just follow the even approach and put the remaining one in the the centre.
+- If there are characters with only one count then any of them can be used to form the centre of the string but only one.
+```cpp
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        unordered_map<char,int> map;
+        int odd = 0;
+        for(auto& ch:s) {
+            map[ch]++;
+            if(map[ch]%2 == 1) 
+                odd++;
+            else
+                odd--;
+        }
+        if(odd>1)
+            return s.size()-odd+1;
+        return s.size();
+        
+    }
+};
+```
+
+
+## Reverse Linked List
+- Just like all the other recursion problem, we can use it here as well
+```cpp
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(!head || !head->next) 
+            return head;
+        ListNode* newHead = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return newHead;
+    }
+};
+```
+
+### Majority Element
+- [[counting]] [[hashMap]] [[divideAndConquer]]
+- [[Boyer-Moore Majority Vote Algorithm]]
+```cpp
+class Solution {
+public:
+    int majorityElement(const vector<int>& nums) {
+        int element = 0;
+        int count = 0;
+        for(auto& i:nums) {
+            if(count < 0)
+                element = i;
+            else if (element == i)
+                count++;
+            else
+                count --;
+        }
+        return element;
+    }
+};
+```
+- Another perhaps more straight forward approach would be 
+```cpp
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        std::sort(nums.begin(),nums.end());
+        return nums[nums.size()/2];
+    }
+};
+```
+- Also you cannot pass  const iterators (.cbegin(), .cend()) into std::sort.
+- Another way of dealing with this problem is by using a hashMap as following.
+```cpp
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int,int> m;
+        for(auto i:nums) {
+            m[i]++;
+        }
+        for(auto z:m) {
+            if (z.second > nums.size()/2)
+                return z.first;
+        }
+        return -1;
+    }
+};
+```
+
+## Add Binary
+- An interesting problem
+```cpp
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        int i = a.size()-1;
+        int j = b.size()-1;
+        int carry = 0;
+        std::string ans = "";
+        while(i>=0 || j>=0 || carry >0) {
+            int sum = carry;
+            if(i>=0) 
+                sum += a[i--] - '0';
+            if(j>=0)
+                sum += b[j--] - '0';
+            ans = std::to_string(sum%2) + ans;
+            carry = sum/2;
+        }
+        return ans;
+    }
+};
+```
+
+### Diameter of a binary tree.
+- [[binaryTree]] [[dfs]] [[bfs]]
+- We can use simple dfs to solve this problem
+```cpp
+class Solution {
+public:
+    int getHeight(TreeNode* root, int& dia) {
+        if(!root)
+            return 0;
+        int lheight = getHeight(root->left,dia);
+        int rheight = getHeight(root->right,dia);
+        dia = std::max(dia, lheight+rheight);
+        return 1 + std::max(getHeight(root->left,dia), getHeight(root->right,dia));
+
+    }
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(!root)
+            return 0;
+        int dia = 0;
+        getHeight(root,dia);
+        return dia;
+
+    }
+};
+```
+
+### Middle of the linked list
+- [[linkedList]] [[twoPointers]]
+```cpp
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        if(!head)
+            return head;
+        ListNode* slow = head;
+        while(head && head->next) {
+            slow = slow->next;
+            head = head->next->next;
+        }
+        return slow;
+    }
+};
+```
+
+### Contains Duplicate
+- [[hashMap]] [[sorting]] [[array]]
+- Again this problem leads to multiple solution, one being the following which uses a hash map.
+```cpp
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_map<int,int> m;
+        for(auto& i:nums) {
+            m[i]++;
+            if(m[i] > 1)
+                return true;
+        }
+        return false;
+    }
+};
+```
+- The following uses sorting
+```cpp
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        std::sort(nums.begin(),nums.end());
+        auto itr = nums.begin();
+        while(itr+1 != nums.end()) {
+            if(*itr == *(++itr))
+                return true; 
+
+        }
+        return false;
+    }
+};
+```
+Also all the following are equivalent
+```cpp
+*++itr = * ++itr = *(++itr)
+```
+- But the following won't work
+```cpp
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        std::sort(nums.begin(),nums.end());
+        auto itr = nums.begin();
+        while(itr+1 != nums.end()) {
+            if(*itr == *(itr++))
+                return true; 
+
+        }
+        return false;
+    }
+};
+```
+### Maximum Depth of a binary tree.
+- [[dfs]] [[bfs]] [[binaryTree]]
+- Again seeing that we have a binary tree, the problem leads itself well to a very simple recursive approach.
+```cpp
+class Solution {
+public:
+    int getHeight(TreeNode* root) {
+        if(!root)
+            return 0;
+        return 1 + std::max(getHeight(root->left), getHeight(root->right));
+    }
+
+    int maxDepth(TreeNode* root) {
+        if(!root)
+            return 0;
+        return getHeight(root);
+        
+    }
+};
+```
+
+- Let us also see how a bfs approach would have worked.
+```cpp
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(!root)
+            return 0;
+        std::queue<TreeNode*> q;
+        uint height = 0; 
+        q.push(root);
+        while(!q.empty()) {
+            int lvlwidht = q.size();
+            for(int i =0; i<lvlwidht; i++) {
+                TreeNode* tn = q.front();
+                q.pop();
+                if(tn->left) 
+                    q.push(tn->left);
+                if(tn->right)
+                    q.push(tn->right);
+            }
+
+            height++;
+        }
+        return height;
+    }
+};
+```
+- The interesting thing to notice about this implementation is how we have seperated the task of equeing from the main loop by introducing another loop.
+
+### Roman to Integer
+- The problem introduces an insight into how the data is behaving and we use that to our advantage.
+```cpp
+class Solution {
+public:
+    int romanToInt(string s) {
+        int res = 0;
+        stack<char> stack;
+        unordered_map<char,int> rti = {{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}};
+
+        for(auto& ch:s) {
+            if(!stack.empty() &&rti[stack.top()] < rti[ch] ) {
+                res += (rti[ch] - rti[stack.top()]);
+                stack.pop();
+                continue;
+            }
+            stack.push(ch);
+        } 
+
+        while(!stack.empty()) {
+            res += rti[stack.top()];
+            stack.pop();
+        }
+        return res;
+    }
+};
+```
+
+### BackSpace String Compare
+- [[stack]] [[simulation]] [[twoPointers]]
+- We can solve this in a more natural way if use the stack.
+```cpp
+class Solution {
+public:
+    bool backspaceCompare(const string& s, const string& t) {
+        std::stack<char> s_stack;
+        std::stack<char> t_stack;
+        for(auto& ch:s) {
+            if(ch == '#' && !s_stack.empty())
+                s_stack.pop();
+            else if (ch != '#') 
+                s_stack.push(ch);
+        }
+
+        for(auto& ch:t) {
+            if(ch == '#' && !t_stack.empty())
+                t_stack.pop();
+            else if (ch != '#') 
+                t_stack.push(ch);
+        }
+
+        return s_stack == t_stack;
+        
+    }
+};
+```
+- Notice how the stacks mimics what we acutally do when typing.
+- The other approach would be to use two variables as follows.
+```cpp
+class Solution {
+public:
+    bool backspaceCompare(std::string S, std::string T) {
+    int i = S.length() - 1;
+    int j = T.length() - 1;
+    int skipS = 0, skipT = 0;
+
+    while (i >= 0 || j >= 0) {
+        while (i >= 0) {
+            if (S[i] == '#') {
+                skipS++;
+                i--;
+            } else if (skipS > 0) {
+                skipS--;
+                i--;
+            } else {
+                break;
+            }
+        }
+
+        while (j >= 0) {
+            if (T[j] == '#') {
+                skipT++;
+                j--;
+            } else if (skipT > 0) {
+                skipT--;
+                j--;
+            } else {
+                break;
+            }
+        }
+
+        // Compare the current characters if both are non-backspace characters
+        if (i >= 0 && j >= 0 && S[i] != T[j]) {
+            return false;
+        }
+
+        // If one string reaches the end but the other doesn't, they are not equal
+        if ((i >= 0) != (j >= 0)) {
+            return false;
+        }
+
+        i--;
+        j--;
+    }
+
+    return true;
+}
+};
+```
+
+## Counting bits 
+- [[Bit-Manipulation]]
+```cpp
+class Solution {
+public:
+    uint8_t hammingWeight(uint32_t n) {
+        if(!n)
+            return 0;
+        uint8_t count = 0;
+        while(n) {
+            count += n & 1;
+            n >>= 1;
+        }
+        return count;
+    }
+
+
+    vector<int> countBits(int n) {
+        vector<int> res(n+1,0);
+        for(int i = 0; i<=n; ++i) {
+            res[i] = hammingWeight(i);
+        }
+        return res;
+    }
+};
+```
+- Another straight forward approach would be
+```cpp
+class Solution {
+public:
+
+    
+    vector<int> countBits(int n) {
+        vector<int> res(n+1,0);
+        for(int i = 0; i<=n; ++i) {
+            res[i] = __builtin_popcount(i);
+        }
+        return res;
+    }
+};
+```
+
+## Same Tree
+- [[binaryTree]] [[recursion]] [[dfs]] [[bfs]]
+```cpp
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(!p && !q)
+            return true;
+        if(!q || !p)
+            return false;
+        
+        if(q->val != p->val)
+            return false;
+
+        return isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+    }
+```
+- The above is a dfs approach.
+- And the following is a bfs approach.
