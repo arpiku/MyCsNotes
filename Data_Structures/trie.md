@@ -176,3 +176,69 @@ int main() {
 
 ```
 
+
+## Another faster implementation of Trie
+```cpp
+class TrieNode{
+    public: 
+        TrieNode * child[26];
+        bool isWord;
+
+        TrieNode(){
+            for(auto &X: child){
+                X=NULL;
+            }
+            isWord = false;
+        }
+        
+};
+
+class Trie {
+public:
+    TrieNode * root;
+    Trie() {
+        root = new TrieNode();
+    }
+    
+    void insert(string word) {
+        TrieNode * p = root;
+        for(auto &x: word){
+            if(!p->child[(x-'a')]){
+                p->child[(x-'a')] = new TrieNode();
+            }
+            p = p->child[(x-'a')];
+        }
+        p->isWord = true;
+    }
+    
+    bool search(string word) {
+        TrieNode *p =root;
+        for(auto &x: word){
+            if(!p->child[(x-'a')]){
+                return false;
+            }
+            p = p->child[x-'a'];
+        }
+        return p->isWord;
+    }
+    
+    bool startsWith(string prefix) {
+        TrieNode *p = root;
+        for(auto &x: prefix){
+            if(!p->child[(x-'a')]){
+                return false;
+            }
+            p = p->child[(x-'a')];
+        }
+        return true;
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
+```

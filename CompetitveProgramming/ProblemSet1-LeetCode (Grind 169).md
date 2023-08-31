@@ -1482,6 +1482,7 @@ public:
 ```
 
 ## Insert Interval
+- 
 
 ## 01 Matrix
 - [[array]] [[dynamicProgramming]] [[bfs]] [[matrix]]
@@ -1678,6 +1679,53 @@ public:
 ```
 
 ## 3Sum
+- [[array]] [[twoPointers]] [[sorting]]
+```cpp
+class Solution {
+public:
+    std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
+    std::vector<std::vector<int>> result;
+    int n = nums.size();
+
+    if (n < 3) {
+        return result; 
+    }
+
+    // Sort the input array.
+    std::sort(nums.begin(), nums.end());
+
+    for (int i = 0; i < n - 2; i++) {
+        // Avoid duplicates.
+        if (i > 0 && nums[i] == nums[i - 1]) {
+            continue;
+        }
+
+        int target = -nums[i];
+        int left = i + 1;
+        int right = n - 1;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+
+            if (sum == target) {
+                result.push_back({nums[i], nums[left], nums[right]});
+                // Avoid duplicates.
+                while (left < right && nums[left] == nums[left + 1]) left++;
+                while (left < right && nums[right] == nums[right - 1]) right--;
+                left++;
+                right--;
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+
+    return result;
+}
+};
+```
 
 ## Binary Tree Level Order Traversal
 - [[binaryTree]] [[bfs]]
@@ -1709,6 +1757,106 @@ public:
 ```
 
 ## Clone Graph
+- [[hashMap]] [[bfs]] [[dfs]] [[graph]]
+```cpp
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector<Node*> neighbors;
+    Node() {
+        val = 0;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val) {
+        val = _val;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val, vector<Node*> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+};
+*/
+
+class Solution {
+public:
+    std::unordered_map<Node*, Node*> visited;
+
+Node* cloneGraph(Node* node) {
+    if (!node) {
+        return nullptr; // Return nullptr for an empty graph.
+    }
+
+    // If the node has already been cloned, return its clone.
+    if (visited.find(node) != visited.end()) {
+        return visited[node];
+    }
+
+    // Create a clone of the current node.
+    Node* cloneNode = new Node(node->val);
+
+    // Mark the node as visited and store its clone.
+    visited[node] = cloneNode;
+
+    // Recursively clone all neighbors of the current node.
+    for (Node* neighbor : node->neighbors) {
+        cloneNode->neighbors.push_back(cloneGraph(neighbor));
+    }
+
+    return cloneNode;
+}
+};
+```
+
+## Min Stack
+- Too easy
+```cpp
+class MinStack {
+public:
+    typedef struct node{
+        int v;
+        int minUntilNow;
+        node* next;
+    }node;
+
+    MinStack() : topN(nullptr){
+        
+    }
+    
+    void push(int val) {
+        node* n = new node;
+        n->v = n->minUntilNow = val;
+        n->next = nullptr;
+        
+        if(topN == nullptr){
+            topN = n;
+        }
+
+        else{
+            n->minUntilNow = min(n->v,topN->minUntilNow);
+            n->next = topN;
+            topN = n;
+        }
+    }
+    
+    void pop() {
+        topN = topN->next;
+    }
+    
+    int top() {
+        return topN->v;
+    }
+    
+    int getMin() {
+        return topN->minUntilNow;
+    }
+
+    private:
+    node* topN;
+};
+```
 
 ## Evaluate Reverse Polish Notation
 - [[math]] [[stack]] [[arra]]
@@ -1755,8 +1903,198 @@ public:
 ```
 
 ## Course Schedule
+- [[topological sorting]] [[Khan's Algorithm]]
+```cpp
+class Solution {
+public:
+    bool canFinish(int numCourses, std::vector<std::vector<int>>& prerequisites) {
+    std::vector<std::vector<int>> graph(numCourses);
+    std::vector<int> inDegree(numCourses, 0);
+    for (const auto& prerequisite : prerequisites) {
+        int course = prerequisite[0];
+        int prereq = prerequisite[1];
+        graph[prereq].push_back(course);
+        inDegree[course]++;
+    }
+    std::queue<int> q;
+    for (int i = 0; i < numCourses; i++) {
+        if (inDegree[i] == 0) {
+            q.push(i);
+        }
+    }
+    while (!q.empty()) {
+        int course = q.front();
+        q.pop();
+        numCourses--;
+        for (int dependentCourse : graph[course]) {
+            if (--inDegree[dependentCourse] == 0) {
+                q.push(dependentCourse);
+            }
+        }
+    }
+    return numCourses == 0;
+}
+};
+```
+
 ## Implement Trie
-## Coin Change
+- Just simply implement the datastructure
+```cpp
+class TrieNode {
+public:
+    std::unordered_map<char, TrieNode*> children;
+    bool isEndOfWord;
+
+    TrieNode() {
+        isEndOfWord = false;
+    }
+};
+
+
+class Trie {
+private:
+    TrieNode* root;
+public:
+    Trie() {
+        root = new TrieNode(); 
+    }
+    
+    void insert(string word) {
+        TrieNode* node = root;
+        for(auto c : word) {
+            if(!node->children[c]) {
+                node->children[c] = new TrieNode();
+            }
+            node = node->children[c];
+        }
+        node->isEndOfWord = true;
+    }
+    
+    bool search(string word) {
+        TrieNode* node = root;
+        for(auto c: word) {
+            if(!node->children[c])
+                return false;
+            node = node->children[c];
+        }
+        return node->isEndOfWord;
+    }
+    
+    bool startsWith(string prefix) {
+        TrieNode* node = root;
+        for(auto c: prefix) {
+            if(!node->children[c])
+                return false;
+            node = node->children[c];
+        }
+        return true;
+
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
+```
+## Coin Change 
+- There are multiple ways to solve this problem, following is a **dfs** approach, but it will fail due to over recursion.
+```cpp
+class Solution {
+public:
+    void dfs(std::vector<int>& coins, int amount, int currentAmount, int& minCoins, int& currentCoins) {
+    if (currentAmount == 0) {
+        minCoins = std::min(minCoins, currentCoins);
+        return;
+    }
+
+    if (currentAmount < 0 || currentCoins >= minCoins) {
+        return;
+    }
+
+    for (int coin : coins) {
+        currentCoins++;
+        dfs(coins, amount, currentAmount - coin, minCoins, currentCoins);
+        currentCoins--;
+    }
+}
+
+int coinChange(std::vector<int>& coins, int amount) {
+    int minCoins = amount + 1; 
+    int currentCoins = 0;
+
+    dfs(coins, amount, amount, minCoins, currentCoins);
+
+    return (minCoins > amount) ? -1 : minCoins;
+}
+
+};
+```
+- Following is a **bfs** approach
+```cpp
+class Solution {
+public:
+    int coinChange(std::vector<int>& coins, int amount) {
+    std::queue<int> q;
+    std::vector<bool> visited(amount + 1, false);
+
+    q.push(amount);
+    visited[amount] = true;
+    int level = 0; 
+    while (!q.empty()) {
+        int size = q.size();
+
+        for (int i = 0; i < size; i++) {
+            int currentAmount = q.front();
+            q.pop();
+
+            if (currentAmount == 0) {
+                return level; 
+            }
+
+            for (int coin : coins) {
+                int nextAmount = currentAmount - coin;
+
+       
+                if (nextAmount >= 0 && !visited[nextAmount]) {
+                    q.push(nextAmount);
+                    visited[nextAmount] = true;
+                }
+            }
+        }
+
+        level++; 
+    }
+
+    return -1; 
+}
+};
+```
+- And below is the iterative approach
+```cpp
+int coinChange(std::vector<int>& coins, int amount) {
+
+    std::vector<int> dp(amount + 1, amount + 1);
+
+    dp[0] = 0;
+
+
+    for (int i = 1; i <= amount; i++) {
+        for (int coin : coins) {
+            if (coin <= i) {
+                dp[i] = std::min(dp[i], dp[i - coin] + 1);
+            }
+        }
+    }
+
+
+    return (dp[amount] > amount) ? -1 : dp[amount];
+}
+```
+
 ## Product of Array except Self
 
 ## Min Stack
@@ -1782,5 +2120,105 @@ public:
 ```
 
 ## Number Of Islands
+- [[graph]] [[dfs]] [[bfs]] [[unionFind]] [[matrix]]
+```cpp
+class Solution {
+public:
+    int numIslands(std::vector<std::vector<char>>& grid) {
+        if (grid.empty() || grid[0].empty()) {
+            return 0; // Empty grid has no islands.
+        }
+
+        int numIslands = 0;
+        int rows = grid.size();
+        int cols = grid[0].size();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == '1') {
+                    numIslands++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+
+        return numIslands;
+    }
+
+private:
+    void dfs(std::vector<std::vector<char>>& grid, int row, int col) {
+        int rows = grid.size();
+        int cols = grid[0].size();
+
+        if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] == '0') {
+            return; // Out of bounds or water cell, stop recursion.
+        }
+
+        // Mark the current cell as visited.
+        grid[row][col] = '0';
+
+        // Recursively explore neighboring cells.
+        dfs(grid, row - 1, col); // Up
+        dfs(grid, row + 1, col); // Down
+        dfs(grid, row, col - 1); // Left
+        dfs(grid, row, col + 1); // Right
+    }
+};
+```
 ## Rotating Oranges
+- [[array]] [[bfs]] [[matrix]]
+```cpp
+class Solution {
+public:
+    int orangesRotting(std::vector<std::vector<int>>& grid) {
+        int rows = grid.size();
+        int cols = grid[0].size();
+        int minutes = 0;
+
+        std::queue<std::pair<int, int>> rottenQueue;
+
+        // Count the number of fresh oranges and add rotten oranges to the queue.
+        int freshOranges = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 2) {
+                    rottenQueue.push({i, j});
+                } else if (grid[i][j] == 1) {
+                    freshOranges++;
+                }
+            }
+        }
+
+        // Define possible directions to adjacent cells.
+        std::vector<std::pair<int, int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+        while (!rottenQueue.empty() && freshOranges > 0) {
+            int queueSize = rottenQueue.size();
+
+            for (int i = 0; i < queueSize; i++) {
+                std::pair<int, int> curr = rottenQueue.front();
+                rottenQueue.pop();
+
+                for (const auto& direction : directions) {
+                    int newRow = curr.first + direction.first;
+                    int newCol = curr.second + direction.second;
+
+                    if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols &&
+                        grid[newRow][newCol] == 1) {
+                        grid[newRow][newCol] = 2; // Mark the adjacent fresh orange as rotten.
+                        rottenQueue.push({newRow, newCol});
+                        freshOranges--;
+                    }
+                }
+            }
+
+            if (!rottenQueue.empty()) {
+                minutes++; // Increment the minute if there are more rotten oranges.
+            }
+        }
+
+        return (freshOranges == 0) ? minutes : -1; // Return -1 if some oranges remain fresh.
+    }
+};
+```
 

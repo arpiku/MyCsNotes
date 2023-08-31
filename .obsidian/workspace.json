@@ -13,6 +13,18 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Daily_Notes/21stJuly2022.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7ee694406bfc0c5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
                 "mode": "source",
                 "source": false
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -134,18 +147,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "025736c507aa4bad",
+  "active": "7ee694406bfc0c5f",
   "lastOpenFiles": [
     "Data_Structures/trie.md",
-    "String.md",
     "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+    "Algorithms/streaming algorithm.md",
+    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
+    "Algorithms/Greedy-Algorithm.md",
+    "Algorithms/bfs.md",
+    "DataBases/OLTP vs OLAP.md",
+    "Untitled.md",
+    "Daily_Notes/21stJuly2022.md",
+    "Cpp/Standard Library 1.md",
+    "Cpp/Misc.md",
+    "Cpp/Cpp_Weekly_Cpp23.md",
+    "Data_Structures/matrix.md",
+    "String.md",
     "Basic_shit/Basic Coding.md",
     "Basic_shit/Bit-Manipulation.md",
     "CompetitveProgramming/Dynamic Programming.md",
-    "Algorithms/Greedy-Algorithm.md",
-    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
     "Basic C.md",
-    "Algorithms/bfs.md",
     "Data_Structures/hashMap.md",
     "Data_Structures/linkedList.md",
     "Data_Structures/tree.md",
@@ -154,26 +175,18 @@
     "Data_Structures/array.md",
     "Data_Structures/graphs.md",
     "().md",
-    "array.md",
-    "Untitled 1.md",
-    "VS_Code/VS Notes.md",
-    "Data_Structures.md",
     "Pdfs/AAAMLP.pdf",
     "Microservices/img/snapshot_2.jpg",
     "Data_Structures",
-    "DataBases/Database.md",
     "CompetitveProgramming/img/snapshot_6.jpg",
     "CompetitveProgramming/img/snapshot_5.jpg",
     "CompetitveProgramming/img/snapshot_4.jpg",
     "CompetitveProgramming/img/snapshot_2.jpg",
     "CompetitveProgramming/img/snapshot.jpg",
-    "C/C_getenv.md",
-    "C/C_Basics.md",
     "AWS/img/snapshot_8_Imp.jpg",
     "AWS/img/snapshot_7_Imp.jpg",
     "AWS/img/snapshot_6.jpg",
     "AWS/img/snapshot_5.jpg",
-    "Apache/Apache spark.md",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",
