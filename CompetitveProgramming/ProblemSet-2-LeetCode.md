@@ -1,8 +1,10 @@
-## Search in Roted SubArray
-- Interesting approach but doens't work need to fix
+## Search in Rotated SubArray
+- Interesting approach but doesn't work need to fix
 - The idea 
 	- Find k
-	- Find the element in the aray.
+	- Find the element in the array.
+- The pivot points can be at 0 implying no rotation has happened, or at n-1 implying the array is sorted in reverse order.
+- 
 ```cpp
 class Solution {
 public:
@@ -83,6 +85,13 @@ public:
 ```
 
 
+## Combinations:
+- [[array]] [[backTracking]]
+```cpp
+
+
+```
+
 ## Permutations
 - [[backTracking]] [[array]]
 ```cpp
@@ -149,4 +158,15 @@ public:
         
     }
 };
+```
+
+- Why is this not allowed in a class:
+```cpp
+    auto sumArr = (const std::vector<int>& vecForSum)[] {
+        int sum = 0;
+        for(auto& i:vecForSum) {
+            sum += i;
+        }
+        return sum;
+    };
 ```

@@ -200,3 +200,16 @@ class Solution
 	} 
 };
 ```
+
+
+## Implementing a print function in C++ for a vector
+- #niceTidbit
+```cpp
+auto print = [](auto const remark, auto const& v)
+{
+    std::cout << remark;
+    for (auto n : v)
+        std::cout << n << ' ';
+    std::cout << '\n';
+};
+```
