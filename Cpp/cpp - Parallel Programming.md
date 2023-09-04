@@ -5,11 +5,11 @@ Parallel programming is particularly beneficial when dealing with problems that 
 
 2. **Image Processing**: Tasks like image filtering, convolution, and rendering can be parallelized to process image data concurrently, improving performance for real-time applications.
 
-3. **Data Sorting**: Sorting large datasets using parallel sorting algorithms, such as parallel merge sort, can be much faster when utilizing multiple threads.
+3. **Data Sorting**: Sorting large datasets using parallel sorting algorithms, such as parallel [[merge sort]], can be much faster when utilizing multiple threads.
 
-4. **Monte Carlo Simulation**: Problems involving Monte Carlo simulations, like option pricing in finance or physics simulations, can benefit from parallelization to run multiple simulations concurrently, providing more accurate results in less time.
+4. **Monte Carlo Simulation**: Problems involving [[Monte Carlo simulation]], like option pricing in finance or physics simulations, can benefit from parallelization to run multiple simulations concurrently, providing more accurate results in less time.
 
-5. **Genetic Algorithms**: Genetic algorithms often require evaluating a large number of candidate solutions. Parallelizing the evaluation process can speed up the optimization process.
+5. **Genetic Algorithms**: [[Genetic algorithms]] often require evaluating a large number of candidate solutions. Parallelizing the evaluation process can speed up the optimization process.
 
 6. **Web Scraping and Data Extraction**: When scraping web data or extracting information from large datasets, parallelizing data retrieval and processing can reduce the time required to collect and analyze information.
 

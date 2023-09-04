@@ -128,3 +128,28 @@ int main()
 }
 ```
 - The above code basically tell the OS, that 'Hey! I am not doing anything, so if you want to go ahead till I get back'
+
+## Cpp Code to make a chess board
+```cpp
+#include <array>
+#include <cstddef>
+#include <iostream>
+ 
+int main()
+{
+    constexpr std::size_t xy = 4;
+ 
+    using Cell = std::array<unsigned char, 8>;
+ 
+    std::array<Cell, xy * xy> board;
+ 
+    board.fill({ {0xE2, 0x96, 0x84, 0xE2, 0x96, 0x80, 0, 0} }); // "▄▀";
+ 
+    for (std::size_t count{}; Cell c : board)
+    {
+        std::cout << c.data() << ((++count % xy) ? "" : "\n");
+    }
+}
+
+```
+

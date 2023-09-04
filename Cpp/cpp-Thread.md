@@ -1,4 +1,4 @@
-- [[Parallel Programming]] #parallelprogramming #promisesFutures #threading 
+- [[cpp - Parallel Programming]] #parallelprogramming #promisesFutures #threading 
 The class `thread` represents [a single thread of execution](https://en.wikipedia.org/wiki/Thread_(computing) "enwiki:Thread (computing)"). Threads allow multiple functions to execute concurrently.
 
 Threads begin execution immediately upon construction of the associated thread object (pending any OS scheduling delays), starting at the top-level function provided as a [constructor argument](https://en.cppreference.com/w/cpp/thread/thread/thread "cpp/thread/thread/thread"). The return value of the top-level function is ignored and if it terminates by throwing an exception, [std::terminate](https://en.cppreference.com/w/cpp/error/terminate "cpp/error/terminate") is called. The top-level function may communicate its return value or an exception to the caller via [std::promise](https://en.cppreference.com/w/cpp/thread/promise "cpp/thread/promise") or by modifying shared variables (which may require synchronization, see [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex "cpp/thread/mutex") and [std::atomic](https://en.cppreference.com/w/cpp/atomic/atomic "cpp/atomic/atomic"))
@@ -52,4 +52,4 @@ swap() {
 //swaps two thread object
 }
 ```
-- jthreads are similar to threads in most ways but have special functinality called **Stop token handling** more can be found here [[cppjThread]]
+- jthreads are similar to threads in most ways but have special functinality called **Stop token handling** more can be found here [[cpp-jThread]]

@@ -4,31 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "a3e696d6c6e443ba",
+        "id": "aac100cf2fb7ad5d",
         "type": "tabs",
         "children": [
           {
-            "id": "9b4d8089b18019d7",
+            "id": "995955ce16e4b4fc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cpp/constexpr.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "877ffc7b03ba22b5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "String.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -97,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cpp/constexpr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,30 +117,37 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9b4d8089b18019d7",
+  "active": "995955ce16e4b4fc",
   "lastOpenFiles": [
-    "Cpp/Cpp_Weekly_Cpp23.md",
-    "Cpp/cppCallables.md",
-    "Cpp/cpp-atomic.md",
-    "Cpp/cpp-async.md",
-    "Cpp/tidbits1.md",
-    "Cpp/tidbits.md",
-    "Cpp/cppThread-jthread.md",
-    "Cpp/cppjThread.md",
-    "Cpp/cppjThread vs cppThread.md",
-    "Cpp/Parallel Programming.md",
-    "Cpp/Templates.md",
-    "Cpp/constexpr.md",
-    "Data_Structures/cppVector.md",
-    "Data_Structures/array.md",
-    "Data_Structures/binarySearchTree.md",
-    "Cpp/Standard Library 1.md",
-    "CompetitveProgramming/Dynamic Programming.md",
-    "CompetitveProgramming/ProblemSet1-LeetCode (Grind 169).md",
+    "String.md",
+    "Cpp/cpp - Parallel Programming.md",
+    "Cpp/cpp-RAII principles.md",
+    "Spec Requirement for Workstation 1..md",
+    "computer-requirements.png",
+    "computerSpecs.png",
+    "Multithreading & Concurrency.md",
+    "Cpp/cpp-jThread.md",
+    "Cpp/cpp- cacheLines.md",
+    "Cpp/cpp-array.md",
     "CompetitveProgramming/ProblemSet-2-LeetCode.md",
-    "CompetitveProgramming/Sorted Array.md",
-    "Basic_shit/Bit-Manipulation.md",
-    "Basic_shit/Basic Coding.md",
+    "Cpp/cpp-async.md",
+    "Cpp/cpp-atomic.md",
+    "Cpp/cpp-Callables.md",
+    "Cpp/cpp-constexpr.md",
+    "Cpp/cpp-falt_set.md",
+    "Cpp/cpp-flat_map.md",
+    "Cpp/cpp-tidbits.md",
+    "Python/python-tidbits.md",
+    "Cpp/cpp-list.md",
+    "Cpp/cpp-mdspan.md",
+    "Cpp/cpp-span.md",
+    "Cpp/cpp-flat_multimap.md",
+    "Cpp/cpp-flat_multiset.md",
+    "Cpp/cpp-priority_queue.md",
+    "Cpp/cpp-queue.md",
+    "Cpp/cpp-stack.md",
+    "Cpp/cpp-unordered_multiset.md",
+    "Cpp/createfiles.py",
     "CompetitveProgramming/img/snapshot.jpg",
     "CompetitveProgramming/img/snapshot_2.jpg",
     "CompetitveProgramming/img/snapshot_4.jpg",
@@ -166,12 +156,6 @@
     "CompetitveProgramming/img/snapshot_7.jpg",
     "CompetitveProgramming/img/snapshot_8.jpg",
     "CompetitveProgramming/img/snapshot_9.jpg",
-    "CompetitveProgramming/img/snapshot_10.jpg",
-    "Python/tidbits1.md",
-    "Algorithms/bfs.md",
-    "Algorithms/Boyer-Moore Majority Vote Algorithm.md",
-    "Algorithms/Greedy-Algorithm.md",
-    "Microservices/img/snapshot.jpg",
     "Java",
     "Pdfs/AAAMLP.pdf",
     "Data_Structures",
@@ -180,7 +164,6 @@
     "design_patterns",
     "Basic_shit",
     "linux",
-    "VS_Code",
-    "Data_Science/img/How to Create Xarray Datasets. Defining a dataset from scratch | by Luke Gloege, Ph.D. | Towards Data Science.pdf"
+    "VS_Code"
   ]
 }
