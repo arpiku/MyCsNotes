@@ -8,14 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "995955ce16e4b4fc",
+            "id": "7116ff08492df9c4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Cpp/cpp-CTAD.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c905749aeee53169",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cpp - Multithreading & Concurrency.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a76f55f89b4c39d2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Terminal Tricks.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -44,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cpp",
+                "query": "multi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -61,7 +90,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -81,6 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "cpp - Multithreading & Concurrency.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,53 +148,53 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "995955ce16e4b4fc",
+  "active": "c905749aeee53169",
   "lastOpenFiles": [
-    "String.md",
-    "Cpp/cpp - Parallel Programming.md",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 48m45s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 47m06s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 46m18s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 45m44s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 44m45s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 43m56s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 42m55s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 41m21s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 41m15s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 40m47s].png",
+    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 39m19s].png",
     "Cpp/cpp-RAII principles.md",
-    "Spec Requirement for Workstation 1..md",
-    "computer-requirements.png",
-    "computerSpecs.png",
-    "Multithreading & Concurrency.md",
-    "Cpp/cpp-jThread.md",
-    "Cpp/cpp- cacheLines.md",
-    "Cpp/cpp-array.md",
-    "CompetitveProgramming/ProblemSet-2-LeetCode.md",
-    "Cpp/cpp-async.md",
-    "Cpp/cpp-atomic.md",
-    "Cpp/cpp-Callables.md",
+    "Cpp/cpp-CTAD.md",
+    "cpp - Multithreading & Concurrency.md",
+    "Cpp/Cpp-move.md",
+    "Cpp.md",
+    "Cpp/cpp - Parallel Programming.md",
     "Cpp/cpp-constexpr.md",
-    "Cpp/cpp-falt_set.md",
-    "Cpp/cpp-flat_map.md",
-    "Cpp/cpp-tidbits.md",
-    "Python/python-tidbits.md",
-    "Cpp/cpp-list.md",
-    "Cpp/cpp-mdspan.md",
-    "Cpp/cpp-span.md",
-    "Cpp/cpp-flat_multimap.md",
-    "Cpp/cpp-flat_multiset.md",
-    "Cpp/cpp-priority_queue.md",
-    "Cpp/cpp-queue.md",
-    "Cpp/cpp-stack.md",
-    "Cpp/cpp-unordered_multiset.md",
+    "Cpp/cpp-multiset.md",
+    "Cpp/cpp-printf vs cout.md",
+    "Cpp/cpp-Callables.md",
+    "Cpp/cpp-atomic.md",
+    "Cpp/cpp-async.md",
+    "Cpp/cpp-array.md",
+    "Cpp/cpp- cacheLines.md",
+    "Cpp/cpp atomic vs mutex.md",
+    "Terminal Tricks.md",
+    "CppCon.md",
+    "Rust/Understanding Rust.md",
+    "Cpp/imgs",
+    "Cpp/cpp-cppCon-2018-STL.md",
+    "Cpp/cpp-Thread.md",
+    "Cpp/cpp-Templates.md",
+    "Cpp/cpp-STL 1.md",
+    "Cpp/cpp-jThread vs cpp-Thread.md",
+    "Cpp/cpp-jThread.md",
+    "8F1R.md",
+    "Rust",
     "Cpp/createfiles.py",
-    "CompetitveProgramming/img/snapshot.jpg",
-    "CompetitveProgramming/img/snapshot_2.jpg",
-    "CompetitveProgramming/img/snapshot_4.jpg",
-    "CompetitveProgramming/img/snapshot_5.jpg",
-    "CompetitveProgramming/img/snapshot_6.jpg",
-    "CompetitveProgramming/img/snapshot_7.jpg",
-    "CompetitveProgramming/img/snapshot_8.jpg",
-    "CompetitveProgramming/img/snapshot_9.jpg",
     "Java",
     "Pdfs/AAAMLP.pdf",
     "Data_Structures",
     "CompetitveProgramming/Problems_leetcode",
     "Security",
     "design_patterns",
-    "Basic_shit",
-    "linux",
-    "VS_Code"
+    "Basic_shit"
   ]
 }
