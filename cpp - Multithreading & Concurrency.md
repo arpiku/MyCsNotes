@@ -176,5 +176,20 @@ threadB.join();
 ### What is the difference between`.join()` and `std::latch`
 - `.join()` blocks the thread that calls `.join()`, while the other thread finished
 - A latch is called from a thread that is running, and it blocks it until others get there as well.
-
 ![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 48m45s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 49m13s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 50m33s].png]]
+- This code automatically handles, no matter what order the functions get called in.
+- **No sync primitive is copyable.** 
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 51m35s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 51m35s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 53m58s].png]]
+
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 53m58s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 57m58s].png]]
+
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m27s].png]]
+![[CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m51s].png]]
+
+
+
