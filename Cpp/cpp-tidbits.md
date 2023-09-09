@@ -153,3 +153,18 @@ int main()
 
 ```
 
+## A way of converting false to true using flag:
+```cpp
+#include<iostream>
+
+#include<stdio.h>
+
+int main() {
+	std::cout << bool((5>4)^false) << "\n";
+	std::cout << bool((5>4)^true) << "\n";
+	std::cout << bool((5<4)^true) << "\n";
+	std::cout << bool((5<4)^false) << "\n";
+	return 0;
+};
+
+```

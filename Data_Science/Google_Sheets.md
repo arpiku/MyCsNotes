@@ -31,7 +31,7 @@
 3. It's mostly useful when sharing interactinve graphics with people.
 
 ## Version History
-1. Something similar to [[git]] to see who made what changes, with colour codes cells.
+1. Something similar to [[Git]] to see who made what changes, with colour codes cells.
 
 ## Dealing with outliers
 

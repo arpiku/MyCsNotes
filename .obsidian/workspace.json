@@ -8,43 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7116ff08492df9c4",
+            "id": "6e14978e2a9613f5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cpp/cpp-CTAD.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c905749aeee53169",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cpp - Multithreading & Concurrency.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a76f55f89b4c39d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Terminal Tricks.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "multi",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -90,8 +61,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cpp - Multithreading & Concurrency.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,53 +117,53 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c905749aeee53169",
+  "active": "6e14978e2a9613f5",
   "lastOpenFiles": [
+    "Misc/Terminal Tricks.md",
+    "YAML files.md",
+    "Cryptography",
+    "Cryptography/SSH.md",
+    "README.md",
+    "Links.md",
+    "git/Git.md",
+    "Churn.md",
+    "Collaborative filtering.md",
+    "git",
+    "git/Git_Misc.md",
+    "Misc/Misc.md",
+    "Misc",
+    "Misc/MISC_INFO.md",
+    "LLM_Basics.md",
+    "C/Basic C.md",
+    "DataBases/ClickHouse.md",
+    "8F1R.md",
+    "MinHash clustering.md",
+    "Principal Component Analysis.md",
+    "String.md",
+    "Untitled.md",
+    "Pasted image 20230306132930.png",
+    "t-distributed Stochastic Neighbour Embedding t-SNE.md",
+    "Python/python-pymongo.md",
+    "Python/Scrapy/Scrapy.md",
+    "Spec Requirement for Workstation 1..md",
+    "Python/Scrapy",
+    "Misc/People.md",
+    "Pasted image 20230306133209.png",
+    "Pasted image 20230306133053.png",
+    "Cpp/cpp-Pointers.md",
+    "Pasted image 20230908152030.png",
+    "KFold from scikit-learn.md",
+    "computer-requirements.png",
+    "computerSpecs.png",
+    "JavaScript",
+    "Clean Architecture",
     "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m51s].png",
     "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m27s].png",
     "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 57m58s].png",
     "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 53m58s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 51m35s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 50m33s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 49m13s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 48m45s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 47m06s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 46m18s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 45m44s].png",
-    "Cpp/cpp-RAII principles.md",
-    "Cpp/cpp-CTAD.md",
-    "cpp - Multithreading & Concurrency.md",
-    "Cpp/Cpp-move.md",
-    "Cpp.md",
-    "Cpp/cpp - Parallel Programming.md",
-    "Cpp/cpp-constexpr.md",
-    "Cpp/cpp-multiset.md",
-    "Cpp/cpp-printf vs cout.md",
-    "Cpp/cpp-Callables.md",
-    "Cpp/cpp-atomic.md",
-    "Cpp/cpp-async.md",
-    "Cpp/cpp-array.md",
-    "Cpp/cpp- cacheLines.md",
-    "Cpp/cpp atomic vs mutex.md",
-    "Terminal Tricks.md",
-    "CppCon.md",
-    "Rust/Understanding Rust.md",
     "Cpp/imgs",
-    "Cpp/cpp-cppCon-2018-STL.md",
-    "Cpp/cpp-Thread.md",
-    "Cpp/cpp-Templates.md",
-    "Cpp/cpp-STL 1.md",
-    "Cpp/cpp-jThread vs cpp-Thread.md",
-    "Cpp/cpp-jThread.md",
-    "8F1R.md",
     "Rust",
     "Cpp/createfiles.py",
-    "Java",
-    "Pdfs/AAAMLP.pdf",
-    "Data_Structures",
-    "CompetitveProgramming/Problems_leetcode",
-    "Security",
-    "design_patterns",
-    "Basic_shit"
+    "Java"
   ]
 }
