@@ -170,3 +170,25 @@ In C++, `noexcept` is a keyword used to declare and specify exception specificat
 
 In summary, `noexcept` is a keyword used to declare whether a function can throw exceptions and can also be used to optimize move operations by specifying that they won't throw exceptions. It helps with both code clarity and performance optimization in error-handling scenarios.
 
+
+## ChernoCpp
+```cpp
+//MOVE SEMANTCIS
+//
+
+// When you are creating a copying a value, for the resons such as 
+// passing it to function, or returning,  an extra throw away of 
+// copy is needed to made, this becomes a problem and heapt allocation need
+// to performed, it becomes a 'heavy object'
+//
+
+#include <iostream>
+
+class String{
+	String() = default;
+	String(const char* string) {
+	
+	}
+
+```
+

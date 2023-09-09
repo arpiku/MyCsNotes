@@ -11,8 +11,12 @@
             "id": "6e14978e2a9613f5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Cpp/cpp-const.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "cpp-con",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -61,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Cpp/cpp-const.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,51 +125,51 @@
   },
   "active": "6e14978e2a9613f5",
   "lastOpenFiles": [
-    "Misc/Terminal Tricks.md",
-    "YAML files.md",
-    "Cryptography",
-    "Cryptography/SSH.md",
-    "README.md",
-    "Links.md",
-    "git/Git.md",
-    "Churn.md",
-    "Collaborative filtering.md",
-    "git",
-    "git/Git_Misc.md",
-    "Misc/Misc.md",
-    "Misc",
-    "Misc/MISC_INFO.md",
-    "LLM_Basics.md",
-    "C/Basic C.md",
-    "DataBases/ClickHouse.md",
-    "8F1R.md",
-    "MinHash clustering.md",
-    "Principal Component Analysis.md",
-    "String.md",
-    "Untitled.md",
-    "Pasted image 20230306132930.png",
-    "t-distributed Stochastic Neighbour Embedding t-SNE.md",
-    "Python/python-pymongo.md",
-    "Python/Scrapy/Scrapy.md",
-    "Spec Requirement for Workstation 1..md",
-    "Python/Scrapy",
-    "Misc/People.md",
-    "Pasted image 20230306133209.png",
-    "Pasted image 20230306133053.png",
+    "Pdfs/Medium_articles/Scrape and Summarize News Articles in 5 Lines of Python Code | by Artem | Towards Data Science.pdf",
+    "Pdfs/Medium_articles/Detecting Document Similarity With Doc2vec | by Omar Sharaki | Towards Data Science.pdf",
+    "Pdfs/Medium_articles/What similarity metric should you use for your recommendation system? | by Brett Vintch | bag of words | Medium.pdf",
+    "Pdfs/Medium_articles/Calculating Text Similarity With Gensim | by Riley Huang | Better Programming.pdf",
+    "Pdfs/Medium_articles/Build an Article Recommendation Engine With AI_ML | by Tyler Hawkins | Better Programming.pdf",
+    "Pdfs/Medium_articles/Fira_Code.zip",
+    "Pdfs/Medium_articles/LDA2vec Word Embeddings in Topic Models | by Lars Hulstaert | Towards Data Science.pdf",
+    "Pdfs/Medium_articles",
+    "Pdfs/Research_papers/1-s2.0-S0893608023001016-main.pdf",
+    "Pdfs/Research_papers/1-s2.0-S0893608021003683-main.pdf",
+    "Pdfs/Research_papers/8916-Article Text-12444-1-2-20201228.pdf",
+    "InfoToRead/img_gs/snapshot23.jpg",
+    "InfoToRead/img_gs/snapshot22.jpg",
+    "InfoToRead/img_gs/snapshot20.jpg",
+    "InfoToRead/img_gs/snapshot_3.jpg",
+    "InfoToRead/img_gs/snapshot_2.jpg",
+    "InfoToRead/img_gs/snapshot21.jpg",
+    "InfoToRead/img_gs/snapshot25.jpg",
+    "InfoToRead/img_gs/snapshot31.jpg",
+    "InfoToRead/img_gs/snapshot19.jpg",
+    "InfoToRead/img_gs/snapshot_6.jpg",
+    "Cpp/cpp-Classes.md",
     "Cpp/cpp-Pointers.md",
-    "Pasted image 20230908152030.png",
-    "KFold from scikit-learn.md",
-    "computer-requirements.png",
-    "computerSpecs.png",
-    "JavaScript",
-    "Clean Architecture",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m51s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 1h00m27s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 57m58s].png",
-    "Cpp/imgs/CppCon - Back to Basics Concurrency - Arthur O'Dwyer - CppCon 2020 [F6Ipn7gCOsY - 966x543 - 53m58s].png",
-    "Cpp/imgs",
-    "Rust",
-    "Cpp/createfiles.py",
-    "Java"
+    "Cpp/cpp-AdviceByOLC.md",
+    "Misc/Terminal Tricks.md",
+    "Cpp/cpp-Main.md",
+    "Cpp/cpp-Templates.md",
+    "Cpp/cpp-Timing.md",
+    "Cpp/cpp-this*.md",
+    "Cpp/cpp-auto.md",
+    "Cpp/cpp-Stringi.md",
+    "Cpp/cpp-array.md",
+    "Cpp/cpp-Stack vs. Heap.md",
+    "Cpp/cpp-Scope.md",
+    "Cpp/cpp-Mistakes.md",
+    "Cpp/cpp-vector.md",
+    "Cpp/cpp-Operators.md",
+    "Cpp/cpp-Namespace.md",
+    "Cpp/cpp-Mutable.md",
+    "Cpp/cpp-Cherno-Mutithreading.md",
+    "Cpp/cpp - Multithreading & Concurrency.md",
+    "Cpp/Cpp-move.md",
+    "Cpp/cpp-MemberIntializerLists.md",
+    "Cpp/cpp-Macros.md",
+    "Cpp/cpp-Static Library.md",
+    "Cpp/cpp-Lambdas.md"
   ]
 }
