@@ -55,7 +55,7 @@ int main()
 	std::vector<std::string> fruits;
 	fruits.push_back("Apple");
 	fruits.push_back("Tomato"); // facts!
-	for(std::vector<std::string>::iterator it = fruits.begin(); //look into 'iterators' folder
+	for(std::vector<std::string>::iterator it = fruits.begin(); //look into cpp-iterators' folder
 		it !=fruits.end(); it++) // but basically this can be replaced by a simple for loop instead of 'iterator'
 	{
 		std::cout << *it << std::endl;
